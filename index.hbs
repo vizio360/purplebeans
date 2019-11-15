@@ -22,14 +22,27 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
+    {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+        {{#foreach featured}}
+            <article class="{{post_class}}">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                </header>
+                <section class="post-excerpt">
+                    <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+                </section>
+            </article>
+        {{/foreach}}
+    {{/get}}
+
     <div class="inner posts">
 
         <div class="post-feed">
             {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
+                {{^if featured}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/if}}
             {{/foreach}}
         </div>
 

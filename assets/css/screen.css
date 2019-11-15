@@ -113,8 +113,7 @@ body {
     position: relative;
     margin-top: 64px;
     padding-bottom: 12px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    color: #191b1f;
     background-size: cover;
 }
 
@@ -127,7 +126,6 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
 }
 
 .site-header-background:after {
@@ -169,7 +167,7 @@ body {
 }
 
 .site-logo {
-    max-height: 55px;
+    max-height: 80px;
 }
 
 .site-description {
@@ -247,20 +245,19 @@ body {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 520px) {
     .site-home-header .site-title {
         font-size: 3.2rem;
     }
 
     .site-home-header .site-description {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .site-archive-header .site-header-content {
         min-height: unset;
     }
 }
-
 
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
@@ -271,7 +268,7 @@ body {
     right: 0;
     left: 0;
     z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
+    background: color(var(--darkgrey) a(80%));
 }
 
 .site-nav {

@@ -1,0 +1,145 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.1.0/css/line-awesome.min.css">
+<style>
+
+.wrapper {
+  position: relative;
+  perspective: 40em;
+  display: grid;
+  transform-style: preserve-3d;
+}
+
+.card {
+  grid-area: 1 / 1;
+  height: 400px;
+  width: 300px;
+  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  background: white;
+  display: block;
+  text-align: center;
+  padding: 30px;
+  color: #000;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+  border: 9px solid #6A3F8A;
+}
+
+.card img {
+  width: 80%;
+}
+
+.card .enclosed {
+  background: #000;
+  line-height: 1;
+  color: rgba(249, 198, 26, 1);
+  padding: 0 5px;
+  display: inline-block;
+  transform: translate(-1px, 1px) scale(0.75);
+  transform-origin: right center;
+}
+
+/*
+.wrapper:before {
+  --bw: 9px;
+  grid-area: 1 / 1;
+  content: '';
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  margin-top: calc(-1 * var(--bw));
+  margin-left: calc(-1 * var(--bw));
+  background: transparent;
+  transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  pointer-events: none;
+  border: var(--bw) solid #6A3F8A;
+  box-sizing: content-box;
+}
+
+
+.hovered,
+.wrapper:hover > div,
+.wrapper:hover:before {
+  transform: none;
+}
+
+
+.wrapper > div,
+.wrapper:before {
+  will-change: transform;
+  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+}
+*/
+.hovered {
+  transform: none;
+}
+
+.wrapper > div {
+  will-change: transform;
+  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+}
+
+
+html { 
+  background: url({{@site.cover_image}}) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: sans-serif;
+
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+.content {
+  display: block;
+}
+
+.iconsSize {
+ font-size: 64px;
+}
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="card" id="card">
+  <div class="content">
+  <a href="{{@site.url}}">
+  <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" /></a>
+</div>
+<div class="content">
+  <h3>Simone Vicentini</h3>
+  <i class="las la-mobile iconsSize"></i>
+  <h2>07767 853593</h2>
+  <p><a href="mailto:simone.vicentini@purplebeans.co.uk"><i class="la la-envelope iconsSize"></i></a></p>
+</div>
+</div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script>
+      window.onload = function () {
+        setTimeout(function(){
+      $("#card").addClass('hovered');
+    }, 100);
+    };
+    </script>
+</body>
+</html>
