@@ -1,7 +1,9 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.1.0/css/line-awesome.min.css">
+    {{!-- Fonts --}}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.1.0/css/line-awesome.min.css">
 <style>
 
 .wrapper {
@@ -13,64 +15,22 @@
 
 .card {
   grid-area: 1 / 1;
-  height: 400px;
   width: 300px;
   transform: translateX(10px) rotateY(25deg) rotateX(10deg);
   background: white;
   display: block;
   text-align: center;
-  padding: 30px;
-  color: #000;
+  /*padding: 30px 10px 15px 10px;*/
+  color: #ffffff;
   backface-visibility: hidden;
   box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
-  border: 9px solid #6A3F8A;
+  border: 9px solid #b1b1b1;
 }
 
 .card img {
-  width: 80%;
+  width: 70%;
 }
 
-.card .enclosed {
-  background: #000;
-  line-height: 1;
-  color: rgba(249, 198, 26, 1);
-  padding: 0 5px;
-  display: inline-block;
-  transform: translate(-1px, 1px) scale(0.75);
-  transform-origin: right center;
-}
-
-/*
-.wrapper:before {
-  --bw: 9px;
-  grid-area: 1 / 1;
-  content: '';
-  backface-visibility: hidden;
-  height: 100%;
-  width: 100%;
-  margin-top: calc(-1 * var(--bw));
-  margin-left: calc(-1 * var(--bw));
-  background: transparent;
-  transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
-  pointer-events: none;
-  border: var(--bw) solid #6A3F8A;
-  box-sizing: content-box;
-}
-
-
-.hovered,
-.wrapper:hover > div,
-.wrapper:hover:before {
-  transform: none;
-}
-
-
-.wrapper > div,
-.wrapper:before {
-  will-change: transform;
-  transition: .3s transform cubic-bezier(.25,.46,.45,1);
-}
-*/
 .hovered {
   transform: none;
 }
@@ -87,10 +47,10 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: sans-serif;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -104,11 +64,27 @@ body {
 }
 
 .content {
-  display: block;
+  padding: 20px;
+}
+
+.contentDetails {
+  display: grid;
+  background-color: #6a3f8a;
+  grid-template-columns: auto auto;
 }
 
 .iconsSize {
  font-size: 64px;
+}
+
+a {
+    text-decoration: none; 
+    color: #ffffff; 
+}
+
+.name {
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 </style>
@@ -120,11 +96,14 @@ body {
   <a href="{{@site.url}}">
   <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" /></a>
 </div>
-<div class="content">
-  <h3>Simone Vicentini</h3>
-  <i class="las la-mobile iconsSize"></i>
-  <h2>07767 853593</h2>
+<div class="contentDetails">
+  <div class="name">
+    <h2>Simone Vicentini</h2>
+  </div>
+  <p><a href="tel:07767853593"><i class="las la-mobile iconsSize"></i></a></p>
   <p><a href="mailto:simone.vicentini@purplebeans.co.uk"><i class="la la-envelope iconsSize"></i></a></p>
+  <p class="name">07767853593</p>
+  <p class="name">simone.vicentini@purplebeans.co.uk</p>
 </div>
 </div>
 </div>
